@@ -1,4 +1,5 @@
-# Git repo setup for Pausch Lab
+# Rickle
 
-Pausch Lab Members can use this template repositories
-for Unity based projects.
+Hypercasual 2D game!
+
+![Screenshot](/screenshots/screenshots.png)
