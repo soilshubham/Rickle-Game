@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class gameplayController : MonoBehaviour
 {
 
+
+
     public GameObject pauseMenu;
     public GameObject RealPauseMenu;
     public static bool menuOpen;
@@ -25,7 +27,7 @@ public class gameplayController : MonoBehaviour
 
     public cameraFollow cameraScript;
     public int moveCount = 1;
-    public int score = 0;
+    public static int score = 0;
 
     public static bool audioMute;
     public AudioSource backgroundMusic;
@@ -68,11 +70,17 @@ public class gameplayController : MonoBehaviour
 
     void Update()
     {
+
+
         GetComponent<AudioLowPassFilter>().cutoffFrequency = lowPassValue;
 
         if (boxscript.death)
         {
             pauseButton.SetActive(false);
+
+
+
+
         }
 
 
@@ -129,6 +137,8 @@ public class gameplayController : MonoBehaviour
         Time.timeScale = 0;
         pauseMenuOpen = true;
         RealPauseMenu.SetActive(true);
+
+
     }
 
     public void continueButton()
@@ -146,15 +156,10 @@ public class gameplayController : MonoBehaviour
 
     void detectInput()
     {
-        if (Input.GetMouseButton(0) && !mouseOverUi() && !pauseMenuOpen)
+        if (Input.GetMouseButton(0))
         {
             currentbox.dropBox();
         }
-    }
-
-    public bool mouseOverUi()
-    {
-        return EventSystem.current.IsPointerOverGameObject();
     }
 
     public void spawnnewBox()

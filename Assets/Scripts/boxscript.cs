@@ -75,7 +75,7 @@ public class boxscript : MonoBehaviour
         gameplayController.instance.spawnnewBox();
 
         Trigger = false;
-        gameplayController.instance.score += 1;
+        gameplayController.score += 1;
         this.tag = "landed";
 
     }
