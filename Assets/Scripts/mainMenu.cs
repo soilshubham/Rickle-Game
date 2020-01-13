@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
@@ -9,6 +10,10 @@ public class mainMenu : MonoBehaviour
     public GameObject diffSelect;
     public GameObject menuSelect;
     public GameObject muteCircle;
+
+    public Text nhsDisplay;
+    public Text hhsDisplay;
+    public Text ehsDisplay;
 
     public Animator muteCircleAnim;
 
@@ -19,6 +24,11 @@ public class mainMenu : MonoBehaviour
         diffSelect.SetActive(false);
         menuSelect.SetActive(true);
         menuMusic.mute = false;
+
+        nhsDisplay.text = "Best: " + PlayerPrefs.GetInt("nHS");
+        hhsDisplay.text = "Best: " + PlayerPrefs.GetInt("hHS");
+        ehsDisplay.text = "Best: " + PlayerPrefs.GetInt("eHS");
+
     }
 
 
